@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "es2015", "dom.iterable", "esnext"],
+    "sourceMap": true,
+    "declaration": true,
+    "noImplicitAny": true,
+    "outDir": "./lib/cjs/",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -20,7 +20,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src/**/*.ts*"],
+  "exclude": ["node_modules", "dist", "lib"]
 }
