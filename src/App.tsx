@@ -1,12 +1,10 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { List } from "flowbite-react";
+import List from "./components/List";
 
 function App() {
   return (
     <div className="App">
-      <List />
+      <List name="test" role="test" currentLocation="test" />
     </div>
   );
 }
