@@ -4,7 +4,7 @@ import List from "./components/List";
 function App() {
   return (
     <div className="App">
-      <List name="test" role="test" currentLocation="test" />
+      <List name="test" role="test" currentLocation="test" nextLocations={[]} />
     </div>
   );
 }
