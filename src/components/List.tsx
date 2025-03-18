@@ -21,13 +21,31 @@ const List = ({
 }: ListInterface) => {
   const [data, setData] = useState<ListInterface[]>([
     {
-      name: "test",
-      role: "test",
-      currentLocation: "test",
-      nextLocations: [{ locationDate: "date", locationName: "name" }],
+      name: "name",
+      role: "role",
+      currentLocation: "current",
+      nextLocations: [
+        { locationDate: "locationDate", locationName: "locationName" },
+      ],
     },
-    { name: "test", role: "test", currentLocation: "test", nextLocations: [] },
-    { name: "test", role: "test", currentLocation: "test", nextLocations: [] },
+    {
+      name: "name",
+      role: "role",
+      currentLocation: "current",
+      nextLocations: [],
+    },
+    {
+      name: "name",
+      role: "role",
+      currentLocation: "current",
+      nextLocations: [],
+    },
+    {
+      name: "name",
+      role: "role",
+      currentLocation: "current",
+      nextLocations: [],
+    },
   ]);
 
   return (

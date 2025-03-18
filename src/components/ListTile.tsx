@@ -19,10 +19,15 @@ const ListTile = ({
 }: ListTileInterface) => {
   return (
     <div className="list_tile">
-      <p>{name}</p>
-      <p>{role}</p>
-      <p>{currentLocation}</p>
-      <div>
+      <div className="list_tile_sections">
+        <p>{name}</p>
+        <p>{role}</p>
+      </div>
+      <div className="list_tile_sections">
+        <p>{currentLocation}</p>
+      </div>
+
+      <div className="list_tile_sections">
         {nextLocations.length > 0 ? (
           nextLocations.map((location) => (
             <p>
