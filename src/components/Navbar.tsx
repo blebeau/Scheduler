@@ -1,15 +1,24 @@
+import { useNavigate } from "react-router";
+import "../styles/Navbar.css";
+
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleClick = (value: string) => {
+    navigate(`/${value}`, { replace: true });
+  };
+
   return (
-    <div
-      style={{
-        height: "100vh",
-        border: "1px black solid",
-        borderRadius: "5px",
-      }}
-    >
-      <h2>Home</h2>
-      <h2>Staff</h2>
-      <h2>Locations</h2>
+    <div className="navbar">
+      <h2 className="navbuttons" onClick={() => handleClick("")}>
+        Home
+      </h2>
+      <h2 className="navbuttons" onClick={() => handleClick("staff")}>
+        Staff
+      </h2>
+      <h2 className="navbuttons" onClick={() => handleClick("locations")}>
+        Locations
+      </h2>
     </div>
   );
 };

@@ -1,0 +1,12 @@
+.navbuttons {
+  font-size: xx-large;
+  color: cadetblue;
+}
+
+.navbar {
+  height: 100vh;
+  border-radius: 5px;
+  margin: 5px;
+  border-style: solid;
+  border-width: 5px;
+}
