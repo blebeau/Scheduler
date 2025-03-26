@@ -1,22 +1,14 @@
 import "../styles/ListTile.css";
-
-type nextLocation = {
-  locationName: string;
-  locationDate: string;
-};
-interface ListTileInterface {
-  name: string;
-  role: string;
-  currentLocation: string;
-  nextLocations: nextLocation[];
-}
+import { ListTileInterface } from "../TypesAndInterfaces/ListTileInterface";
+import { LocationInterface } from "../TypesAndInterfaces/LocationInterface";
 
 const ListTile = ({
   name,
   role,
   currentLocation,
   nextLocations,
-}: ListTileInterface) => {
+  assignedStaff,
+}: ListTileInterface & LocationInterface) => {
   return (
     <div className="list_tile">
       <div className="list_tile_sections">
@@ -28,12 +20,17 @@ const ListTile = ({
       </div>
 
       <div className="list_tile_sections">
-        {nextLocations.length > 0 ? (
+        {nextLocations && nextLocations.length > 0 ? (
           nextLocations.map((location) => (
             <p>
               {location.locationName} - {location.locationDate}
             </p>
           ))
+        ) : (
+          <div></div>
+        )}
+        {assignedStaff && assignedStaff.length > 0 ? (
+          assignedStaff.map((staff) => <p>{staff}</p>)
         ) : (
           <div></div>
         )}

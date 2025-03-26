@@ -1,25 +1,16 @@
 import { useState } from "react";
 import ListTile from "./ListTile";
 import "../styles/List.css";
-
-type nextLocation = {
-  locationName: string;
-  locationDate: string;
-};
-interface ListInterface {
-  name: string;
-  role: string;
-  currentLocation: string;
-  nextLocations: nextLocation[];
-}
+import { nextLocation } from "../TypesAndInterfaces/nextLocation";
+import { StaffInterface } from "../TypesAndInterfaces/staffInterface";
 
 const List = ({
   name,
   role,
   currentLocation,
   nextLocations,
-}: ListInterface) => {
-  const [data, setData] = useState<ListInterface[]>([
+}: StaffInterface) => {
+  const [data, setData] = useState<StaffInterface[]>([
     {
       name: "name",
       role: "role",
@@ -51,7 +42,7 @@ const List = ({
   return (
     <div className="list">
       {data.length > 0 ? (
-        data.map((item: ListInterface) => (
+        data.map((item: StaffInterface) => (
           <div>
             <ListTile
               name={item.name}

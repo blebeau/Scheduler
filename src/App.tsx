@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import List from "./components/List";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
+import Locations from "./components/Locations";
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
                   nextLocations={[]}
                 />
               }
+            />
+            <Route
+              path="/locations"
+              element={<Locations name="test" assignedStaff={[]} />}
             />
           </Routes>
         </BrowserRouter>
