@@ -1,7 +1,6 @@
 import { useState } from "react";
 import ListTile from "./ListTile";
 import "../styles/List.css";
-import { nextLocation } from "../TypesAndInterfaces/nextLocation";
 import { StaffInterface } from "../TypesAndInterfaces/staffInterface";
 
 const List = ({
@@ -12,6 +11,7 @@ const List = ({
 }: StaffInterface) => {
   const [data, setData] = useState<StaffInterface[]>([
     {
+      id: "1",
       name: "name",
       role: "role",
       currentLocation: "current",
@@ -20,18 +20,21 @@ const List = ({
       ],
     },
     {
+      id: "2",
       name: "name",
       role: "role",
       currentLocation: "current",
       nextLocations: [],
     },
     {
+      id: "3",
       name: "name",
       role: "role",
       currentLocation: "current",
       nextLocations: [],
     },
     {
+      id: "4",
       name: "name",
       role: "role",
       currentLocation: "current",
@@ -45,6 +48,7 @@ const List = ({
         data.map((item: StaffInterface) => (
           <div>
             <ListTile
+              id={item.id}
               name={item.name}
               role={item.role}
               currentLocation={item.currentLocation}

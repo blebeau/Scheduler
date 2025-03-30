@@ -1,14 +1,23 @@
+import { useNavigate } from "react-router";
 import "../styles/ListTile.css";
 import { ListTileInterface } from "../TypesAndInterfaces/ListTileInterface";
 import { LocationInterface } from "../TypesAndInterfaces/LocationInterface";
+import { StaffInterface } from "../TypesAndInterfaces/staffInterface";
 
 const ListTile = ({
+  id,
   name,
   role,
   currentLocation,
   nextLocations,
   assignedStaff,
-}: ListTileInterface & LocationInterface) => {
+}: StaffInterface & LocationInterface) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/edit", { state: { id: id } });
+  };
+
   return (
     <div className="list_tile">
       <div className="list_tile_sections">
@@ -35,6 +44,7 @@ const ListTile = ({
           <div></div>
         )}
       </div>
+      <button onClick={() => handleClick()} />
     </div>
   );
 };
