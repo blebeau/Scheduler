@@ -5,8 +5,9 @@ import { LocationInterface } from "../TypesAndInterfaces/LocationInterface";
 const Locations = ({ name, assignedStaff }: LocationInterface) => {
   const [data, setData] = useState<LocationInterface[]>([
     {
+      id: "id",
       name: "name",
-      assignedStaff: ["name1", "name2"],
+      assignedStaff: ["assignedStaff 1", "assignedStaff 2"],
     },
   ]);
   return (
@@ -14,7 +15,11 @@ const Locations = ({ name, assignedStaff }: LocationInterface) => {
       {data.length > 0 ? (
         data.map((item: LocationInterface) => (
           <div>
-            <ListTile name={item.name} assignedStaff={item.assignedStaff} />
+            <ListTile
+              id={item.id}
+              name={item.name}
+              assignedStaff={item.assignedStaff}
+            />
           </div>
         ))
       ) : (

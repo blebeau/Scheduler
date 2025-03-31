@@ -19,6 +19,7 @@ function App() {
               path="/staff"
               element={
                 <List
+                  id="id"
                   name="test"
                   role="test"
                   currentLocation="test"
@@ -28,7 +29,7 @@ function App() {
             />
             <Route
               path="/locations"
-              element={<Locations name="test" assignedStaff={[]} />}
+              element={<Locations id="id" name="test" assignedStaff={[]} />}
             />
           </Routes>
         </BrowserRouter>
