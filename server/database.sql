@@ -1,18 +1,23 @@
 CREATE DATABASE scheduler;
 
 CREATE TABLE staff(
-	staff_id SERIAL PRIMARY KEY,
-	staff_first_name VARCHAR(255),
-	staff_last_name VARCHAR(255),
+	id SERIAL PRIMARY KEY,
+	first_name VARCHAR(255),
+	last_name VARCHAR(255),
 	staff_role VARCHAR(255),
-	staff_current_location VARCHAR(255),
-	staff_next_location VARCHAR(255),
+	email VARCHAR(255),
+	phone_number VARCHAR(255)
 )
 
 CREATE TABLE locations(
-	location_id SERIAL PRIMARY KEY,
+	id SERIAL PRIMARY KEY,
 	location_name VARCHAR(255),
-	first_role_staff VARCHAR(255) FOREIGN KEY REFERENCES staff(staff_id),
-	second_role_staff VARCHAR(255) FOREIGN KEY REFERENCES staff(staff_id),
-	third_role_staff VARCHAR(255) FOREIGN KEY REFERENCES staff(staff_id),,
+)
+
+CREATE TABLE schedule(
+	schedule_id SERIAL PRIMARY KEY,
+	assigned_staff VARCHAR(255) FOREIGN KEY REFERENCES staff(id),
+	location_id VARCHAR(255) FOREIGN KEY REFERENCES locations(id),
+	start_time DATETIME,
+	end_time DATETIME,
 )
