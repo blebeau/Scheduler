@@ -4,6 +4,7 @@ import List from "./components/List";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Locations from "./components/Locations";
+import Scheduler from "./components/Scheduler";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
               path="/locations"
               element={<Locations id="id" name="test" assignedStaff={[]} />}
             />
+            <Route path="/scheduler" element={<Scheduler />} />
           </Routes>
         </BrowserRouter>
       </div>

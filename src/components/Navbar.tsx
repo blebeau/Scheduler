@@ -19,6 +19,9 @@ const Navbar = () => {
       <h2 className="navbuttons" onClick={() => handleClick("locations")}>
         Locations
       </h2>
+      <h2 className="navbuttons" onClick={() => handleClick("scheduler")}>
+        Scheduler
+      </h2>
     </div>
   );
 };
