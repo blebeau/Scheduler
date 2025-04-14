@@ -8,16 +8,16 @@ app.use(cors());
 app.use(express.json());
 
 // Create new schedule
-app.post("/book_schedule", async (res, req) => {
-	console.log('start here', req)
+app.post("/book_schedule", async (req, res) => {
+	console.log('req.body', req.body)
 	try {
-		console.log('req.body', req.body);
-
 		const { id, assigned_staff, location_id, start_time, end_time } = req.body;
 
 		const newBooking = await pool.query("INSER INTO schedule (id, assigned_staff, location_id, start_time, end_time) VALUES($1, $2, $3, $4, $5, $6)",
 			[id, assigned_staff, location_id, start_time, end_time]
 		)
+
+		res.json(newBooking);
 	} catch (err) {
 		console.log('err', err)
 	}
