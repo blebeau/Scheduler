@@ -7,7 +7,7 @@ CREATE TABLE staff(
 	staff_role VARCHAR(255),
 	email VARCHAR(255),
 	phone_number VARCHAR(255)
-)
+);
 
 CREATE TABLE locations(
 	id SERIAL PRIMARY KEY,
@@ -16,8 +16,8 @@ CREATE TABLE locations(
 
 CREATE TABLE schedule(
 	schedule_id SERIAL PRIMARY KEY,
-	assigned_staff VARCHAR(255) FOREIGN KEY REFERENCES staff(id),
-	location_id VARCHAR(255) FOREIGN KEY REFERENCES locations(id),
-	start_time DATETIME,
-	end_time DATETIME,
+	assigned_staff INT REFERENCES staff(id),
+	location_id INT REFERENCES locations(id),
+	start_time TIMESTAMP,
+	end_time TIMESTAMP,
 )

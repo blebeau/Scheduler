@@ -13,7 +13,7 @@ app.post("/book_schedule", async (req, res) => {
 	try {
 		const { id, assigned_staff, location_id, start_time, end_time } = req.body;
 
-		const newBooking = await pool.query("INSER INTO schedule (id, assigned_staff, location_id, start_time, end_time) VALUES($1, $2, $3, $4, $5, $6)",
+		const newBooking = await pool.query("INSERT INTO schedule (id, assigned_staff, location_id, start_time, end_time) VALUES($1, $2, $3, $4, $5, $6)",
 			[id, assigned_staff, location_id, start_time, end_time]
 		)
 
